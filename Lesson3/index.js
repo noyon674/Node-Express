@@ -10,3 +10,8 @@ const os = require('os')
 
 const {totalmem} = require('os')
 //console.log(totalmem())
+
+
+
+const path = require('path')
+console.log(path)
