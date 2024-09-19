@@ -93,3 +93,42 @@ app.delete('/', (req, res)=>{
 
 ## L3
 In this Lesson we will learn about express routing </br>
+
+```JavaScript
+// router.js file
+const userRouter = require('express').Router()
+
+userRouter.get('/', (req, res)=>{
+    res.send('I am GET request of Home route')
+    res.end()
+})
+
+userRouter.post('/', (req, res)=>{
+    res.send('I am POST request of Home route')
+    res.end()
+})
+
+userRouter.delete('/', (req, res)=>{
+    res.send('I am DELETE request of Home route')
+    res.end()
+})
+
+module.exports = userRouter
+```
+
+
+```JavaScript
+// app.js file
+const userRouter = require('./router')
+
+//use all routes
+app.use('/api/user', userRouter)
+
+//others route
+app.use((req, res)=>{
+    res.send('Page not found')
+    res.end()
+})
+
+module.exports = app
+```
