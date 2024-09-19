@@ -73,3 +73,16 @@ app.get('/', (req, res)=>{
 app.post('/', (req, res)=>{
     res.send('I am POST request of Home route')
 })
+```
+3. HTTP `PUT` request
+```JavaScript
+app.put('/', (req, res)=>{
+    res.send('I am PUT request of Home route')
+})
+```
+4. HTTP `DELETE` request
+```JavaScript
+app.delete('/', (req, res)=>{
+    res.send('I am DELETE request of Home route')
+})
+```
