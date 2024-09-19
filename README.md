@@ -59,4 +59,17 @@ app.listen(port, ()=>{
 ```
 
 ## L2
-In the Lesson-2 we will learn about HTTP methods
+In the Lesson-2 we will learn about HTTP methods </br>
+1. HTTP `GET` request:
+
+```JavaScript
+app.get('/', (req, res)=>{
+    res.send('I am GET request of Home route')
+})
+```
+2. HTTP `POST` request
+
+```JavaScript
+app.post('/', (req, res)=>{
+    res.send('I am POST request of Home route')
+})
