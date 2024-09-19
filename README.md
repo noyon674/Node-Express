@@ -65,6 +65,7 @@ In the Lesson-2 we will learn about HTTP methods </br>
 ```JavaScript
 app.get('/', (req, res)=>{
     res.send('I am GET request of Home route')
+    res.end()
 })
 ```
 2. HTTP `POST` request
@@ -72,17 +73,20 @@ app.get('/', (req, res)=>{
 ```JavaScript
 app.post('/', (req, res)=>{
     res.send('I am POST request of Home route')
+    res.end()
 })
 ```
 3. HTTP `PUT` request
 ```JavaScript
 app.put('/', (req, res)=>{
     res.send('I am PUT request of Home route')
+    res.end()
 })
 ```
 4. HTTP `DELETE` request
 ```JavaScript
 app.delete('/', (req, res)=>{
     res.send('I am DELETE request of Home route')
+    res.end()
 })
 ```
