@@ -151,3 +151,11 @@ userRouter.get('/', (req, res)=>{
 userRouter.get('/', (req, res)=>{
     res.redirect('/login')
 })
+```
+3. HTML file send
+```JavaScript
+userRouter.get('/register', (req, res)=>{
+    res.statusCode = 200;
+    res.sendFile(__dirname+"/views/register.html")
+})
+```
