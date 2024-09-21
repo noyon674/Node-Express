@@ -124,6 +124,7 @@ const userRouter = require('./router')
 //use all routes
 app.use('/api/user', userRouter)
 
+
 //others route
 app.use((req, res)=>{
     res.send('Page not found')
@@ -132,3 +133,21 @@ app.use((req, res)=>{
 
 module.exports = app
 ```
+## L4
+We wil learn about HTTP response.
+1. Passing statusCode and json file as a response
+
+```JavaScript
+userRouter.get('/', (req, res)=>{
+    res.status(200).json({
+        "message": "Hi, I am a home page",
+        statusCode: 200
+    })
+})
+```
+2. Redirect from backend
+
+```JavaScript
+userRouter.get('/', (req, res)=>{
+    res.redirect('/login')
+})
