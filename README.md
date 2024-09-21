@@ -168,3 +168,20 @@ userRouter.get('/login', (req, res)=>{
     res.end()
 })
 ```
+5. Clear cookies
+```JavaScript
+userRouter.get('/clearCookie', (req, res)=>{
+    res.clearCookie("name")
+    res.end()
+})
+```
+6. Passign data to the header
+```JavaScript
+userRouter.get('/login', (req, res)=>{
+    res.append("userID", 10001)
+    res.end()
+})
+```
+
+## L5
+This tutorial for HTTP requests
