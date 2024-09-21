@@ -159,3 +159,12 @@ userRouter.get('/register', (req, res)=>{
     res.sendFile(__dirname+"/views/register.html")
 })
 ```
+4. Cookie set to the browser
+
+```JavaScript
+userRouter.get('/login', (req, res)=>{
+    res.cookie("name", "Noyon")
+    res.cookie("age", 24)
+    res.end()
+})
+```
