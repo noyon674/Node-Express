@@ -185,7 +185,7 @@ userRouter.get('/login', (req, res)=>{
 
 ## L5
 This tutorial for HTTP requests <br/>
-1. Data passing using query parameters
+1. Data gatting using query parameters
 ```JavaScript
 // localhost:3100/?id=1001&name=noyon
 userRouter.get('/', (req, res)=>{
@@ -193,7 +193,7 @@ userRouter.get('/', (req, res)=>{
     res.send(`${id} and ${name}`)
 })
 ```
-2. Data passing using params parameteres
+2. Data getting using params parameteres
 ```JavaScript
 // localhost:3100/userID/100/userAge/24
 userRouter.get('/userID/:id/userAge/:age', (req, res)=>{
@@ -202,5 +202,14 @@ userRouter.get('/userID/:id/userAge/:age', (req, res)=>{
 
     res.send(`${ID} and ${Age}`)
 
+})
+```
+3. Data getting from header
+```JavaScript
+userRouter.get('/about', (req, res)=>{
+    const id = req.header('id')
+    const name = req.header('name')
+
+    res.send(`${id} and ${name} from header`)
 })
 ```
