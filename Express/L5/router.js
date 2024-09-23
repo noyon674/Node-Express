@@ -6,4 +6,12 @@ userRouter.get('/', (req, res)=>{
     res.send(`${id} and ${name}`)
 })
 
+//using route parameters
+userRouter.get('/userID/:id/userAge/:age', (req, res)=>{
+    const userId = req.params.id
+    const userAge = req.params.age
+
+    res.send(`${userId} and ${userAge}`)
+
+})
 module.exports = userRouter
