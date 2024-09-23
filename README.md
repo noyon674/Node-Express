@@ -213,3 +213,19 @@ userRouter.get('/about', (req, res)=>{
     res.send(`${id} and ${name} from header`)
 })
 ```
+4.
+Handling body data first of all we should install body parser package in express. `npm install body-parser` <br/>
+
+Then require body parser `const bodyParser = require('body-parser')`
+
+* `app.use(bodyParser.urlencoder({extended: false}))`
+* `app.use(bodyParser.json())`
+
+```JavaScript
+//json data and form data similar
+userRouter.post('/login', (req, res)=>{
+    //bodyparser for body data
+    const {name, age} = req.body
+    res.send(`${name} and ${age}`)
+})
+````
