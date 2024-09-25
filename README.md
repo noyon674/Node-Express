@@ -242,3 +242,22 @@ userRouter.post('/area', (req, res)=>{
 1. For .end first install `npm i dotenv`
 2. where you can use .env file require `require('dotenv').config()`
 3. Access the value from .env file `process.env.variable_name`
+
+## L7
+<p>In this lecture we will learn about middleware</p>
+1. Middleware is just a function, it has three parameters request, response, next
+
+```JavaScript
+//auth is a middleware function
+const auth = (req, res, next)=>{
+    const login = true;
+    if(login){
+        next()
+    }
+}
+
+//if login true then 'I am profile page' will be run
+userRouter.get('/profile', auth, (req, res)=>{
+    res.send('I am Profile page')
+})
+```
