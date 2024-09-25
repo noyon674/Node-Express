@@ -228,4 +228,17 @@ userRouter.post('/login', (req, res)=>{
     const {name, age} = req.body
     res.send(`${name} and ${age}`)
 })
-````
+```
+## L6
+<p>In this lesson we will learn about .env file & calculate area using form data</p>
+
+```JavaScript
+userRouter.post('/area', (req, res)=>{
+    const {height, width} = req.body
+    const result = height * width
+    res.send(`The result is ${result}`)
+})
+```
+1. For .end first install `npm i dotenv`
+2. where you can use .env file require `require('dotenv').config()`
+3. Access the value from .env file `process.env.variable_name`
