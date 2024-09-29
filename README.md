@@ -293,3 +293,11 @@ userRouter.get('/profile', auth, (req, res)=>{
 - mongoDB
 - MVC
 
+```JavaScript
+// api list
+1. api/users --> GET
+2. api/users:id --> GET
+3. api/users --> POST
+4. api/users/:id --> PATCH
+5. api/users/:id --> DELETE
+```
