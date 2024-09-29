@@ -261,3 +261,17 @@ userRouter.get('/profile', auth, (req, res)=>{
     res.send('I am Profile page')
 })
 ```
+## L8
+<p>Static Middleware</p>
+
+1. We can pass the html file but if we add some style or img in the html file design and style not work.
+
+2. The solution is we can do, first create a public file then all the stacit file pick to the public folder
+
+3. Then use static middleware `app.use(express.static('public'))`
+
+
+## MVC (Model View Controller) Architecture
+- Model deal with database
+- View means what user sees
+- Controller connection between Model and view
