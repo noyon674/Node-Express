@@ -1,7 +1,12 @@
 const express = require('express')
 const usersRouter = require('./routes/users.routes')
+const bodyParser = require('body-parser')
 
 const app = express()
+
+//built-in middleware
+app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.json())
 
 //use router
 app.use(usersRouter)

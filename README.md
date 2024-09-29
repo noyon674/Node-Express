@@ -275,3 +275,21 @@ userRouter.get('/profile', auth, (req, res)=>{
 - Model deal with database
 - View means what user sees
 - Controller connection between Model and view
+
+```JavaScript
+<!-- How works MVC -->
+1. view --> router --> controller --> model --> database
+
+//return phase
+2. database --> model --> controller --> view
+```
+
+## L10
+<p>Full function project with MVC architecture and MongoDB database</p>
+
+- express
+- cors
+- bodyparser
+- mongoDB
+- MVC
+
