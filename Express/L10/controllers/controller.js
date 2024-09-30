@@ -35,15 +35,22 @@ const createUser = async (req, res)=>{
 }
 
 const updateUser = async (req, res)=>{
+    // try {
+    //     const {name, age} = req.body
+    //     const user = await User.findOne({id: req.params.id})
+    //     user.name = name;
+    //     user.age = age;
+    //     await user.save()
+    //     res.status(200).json(user);
+    // } catch (error) {
+    //     res.status(500).json(error.message);
+    // }
     try {
-        const {name, age} = req.body
-        const user = await User.findOne({id: req.params.id})
-        user.name = name;
-        user.age = age;
-        await user.save()
-        res.status(200).json(user);
+        // mongodb command both process work smothly
+        await User.updateOne({id: req.params.id}, {$set:{name: req.body.name, age: req.body.age}})
+        res.status(201).json("User is update")
     } catch (error) {
-        res.status(500).json(error.message);
+        
     }
 }
 
