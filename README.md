@@ -326,3 +326,19 @@ const storage = multer.diskStorage({
   
   const upload = multer({ storage: storage })
 ```
+```JavaScript
+//for pick the upload file or image
+//use the middleware and name will be input tags name
+app.post('/upload', upload.single('image'), (req, res)=>{
+    res.status(201).json('File is uploaded')
+})
+```
+
+Don't forget the `enctype="multipart/form-data"` in your form.
+
+```JavaScript
+<form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="image">
+        <button type="submit">upload</button>
+    </form>
+```

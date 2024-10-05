@@ -25,7 +25,7 @@ app.get('/upload', (req, res)=>{
 })
 
 //for pick the upload file or image
-app.post('/upload', (req, res)=>{
+app.post('/upload', upload.single('image'), (req, res)=>{
     res.status(201).json('File is uploaded')
 })
 
