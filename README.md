@@ -309,3 +309,20 @@ userRouter.get('/profile', auth, (req, res)=>{
 <p>In this Lesson we will learn about how to upload file to the server</p>
 
 - For uploading file/image you should install a package which is `npm i multer`
+
+```JavaScript
+//copy from multer package
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        // create a folder in your app where you want to store the file
+      cb(null, 'uploads/')
+    },
+    filename: function (req, file, cb) {
+        //creating file name
+      const name = Date.now()+'-'+file.originalname
+      cb(null, name)
+    }
+  })
+  
+  const upload = multer({ storage: storage })
+```
