@@ -330,7 +330,7 @@ const storage = multer.diskStorage({
 //for pick the upload file or image
 //use the middleware and name will be input tags name
 app.post('/upload', upload.single('image'), (req, res)=>{
-    res.status(201).json('File is uploaded')
+    res.status(201).send('<h3>File is uploaded</h3>');
 })
 ```
 
