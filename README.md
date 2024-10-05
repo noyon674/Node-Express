@@ -303,4 +303,9 @@ userRouter.get('/profile', auth, (req, res)=>{
 ```
 
 ## L11
+<p>In this lesson we practiced about CRUD</p>
+
+## L12
 <p>In this Lesson we will learn about how to upload file to the server</p>
+
+- For uploading file/image you should install a package which is `npm i multer`
