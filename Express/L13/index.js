@@ -5,6 +5,9 @@ const port = 3001
 const multer = require('multer')
 const db_url = 'mongodb://localhost:27017/fileupload'
 
+app.use(express.urlencoded({extends: false}))
+app.use(express.json())
+
 //mongodb is connected with local mongodb
 mongoose
 .connect(db_url)
@@ -24,6 +27,7 @@ const demoSchema = mongoose.Schema({
 })
 
 //creating model
+const User = mongoose.model('files', demoSchema);
 
 //file uploading processing code
 const storage = multer.diskStorage({
@@ -39,9 +43,29 @@ const storage = multer.diskStorage({
   const upload = multer({ storage: storage })
 
 
-app.post('/', upload.single('file'), (req, res)=>{
-    res.status(201).send("<h2>File is uploaded</h2>")
+app.post('/', upload.single('image'), async (req, res)=>{
+    try {
+        //use the model which is created
+        const newPost = new User({
+            name: req.body.name,
+            image: req.file.filename
+        })
+        await newPost.save()
+        res.status(201).json(newPost)
+    } catch (error) {
+        res.status(500).json(error.message)
+    }
 
+})
+
+app.get('/img', async(req, res)=>{
+    try {
+        const findData = await User.find()
+        res.status(201).json(findData)
+        
+    } catch (error) {
+        res.status(500).json(error.message)
+    }
 })
 
 app.get('/', (req, res)=>{
