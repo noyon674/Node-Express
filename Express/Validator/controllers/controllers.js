@@ -10,7 +10,7 @@ const allUsers = async (req, res)=>{
     } catch (error) {
         res.status(500).json(error.message)
     }
-}
+};
 
 //create new users
 const createUser = async (req, res)=>{
@@ -25,7 +25,7 @@ const createUser = async (req, res)=>{
     } catch (error) {
        res.status(500).json(error.message) 
     }
-}
+};
 
 //find a user by id
 const findOne = async (req, res)=>{
