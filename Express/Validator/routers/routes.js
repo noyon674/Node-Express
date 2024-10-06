@@ -10,11 +10,11 @@ const {
 
 
 // all the routes here
-userRouter.get('/', allUsers)
-userRouter.post('/', createUser)
-userRouter.get('/:id', findOne)
-userRouter.delete('/:id', deleteOne)
-userRouter.patch('/:id', updateUser)
+userRouter.get('/', allUsers);
+userRouter.post('/', createUser);
+userRouter.get('/:id', findOne);
+userRouter.delete('/:id', deleteOne);
+userRouter.patch('/:id', updateUser);
 
 userRouter.get('/upload', uploadFile)
 
