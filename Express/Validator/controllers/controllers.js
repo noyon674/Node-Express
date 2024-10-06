@@ -8,7 +8,7 @@ const allUsers = async (req, res)=>{
         const users = await userModel.find({})
         res.status(201).json(users)
     } catch (error) {
-        res.status(500).json(error.message)
+        res.status(500).json(error.message);
     }
 };
 
