@@ -57,11 +57,6 @@ const updateUser = async (req, res)=>{
     }
 };
 
-//file upload
-const uploadFile = (req, res)=>{
-    res.status(201).sendFile(path.join(__dirname+"/../views/index.html"))
-}
-
 
 module.exports = {
     allUsers,
@@ -69,5 +64,4 @@ module.exports = {
     findOne,
     deleteOne,
     updateUser,
-    uploadFile
 }
