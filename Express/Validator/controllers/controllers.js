@@ -35,7 +35,7 @@ const findOne = async (req, res)=>{
     } catch (error) {
         res.status(500).json(error.message)
     }
-}
+};
 
 //delete user by id
 const deleteOne = async (req, res)=>{
