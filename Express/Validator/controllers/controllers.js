@@ -45,7 +45,7 @@ const deleteOne = async (req, res)=>{
     } catch (error) {
         res.status(500).json(error.message)
     }
-}
+};
 
 //update user
 const updateUser = async (req, res)=>{
