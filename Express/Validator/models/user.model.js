@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+//user schema or document structure
 const userSchema = mongoose.Schema({
     id: {
         type: String,
