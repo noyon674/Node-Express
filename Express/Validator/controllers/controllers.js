@@ -1,67 +1,34 @@
-const path = require('path');
-const userModel = require('../models/user.model')
-const { uuid } = require('uuidv4');
+const homeController = (req, res)=>{
+    res.send('I am Home routes')
+}
 
-//find all users
-const allUsers = async (req, res)=>{
+const loginController = (req, res)=>{
     try {
-        const users = await userModel.find({})
-        res.status(201).json(users)
+        const {email, password} = req.body
+        if(email=='admin@gmail.com' && password==12345){
+            res.status(201).json('user loggedin')
+        }else
+        res.status(201).json('Invalid')
+        
     } catch (error) {
-        res.status(500).json(error.message);
+        res.status(500).json(error.message)
     }
-};
+}
 
-//create new users
-const createUser = async (req, res)=>{
+const registerController = (req, res)=>{
     try {
-        const newUser = new userModel({
-            id: uuid(),
-            name: req.body.name,
-            age: req.body.age
-        })
-        await newUser.save();
+        //fetching data from postman
+        const {name, email, password, dob} = req.body;
+        //create newuser
+        const newUser = {
+            name,
+            email,
+            password,
+            dob
+        }
         res.status(201).json(newUser)
     } catch (error) {
-       res.status(500).json(error.message) 
-    }
-};
-
-//find a user by id
-const findOne = async (req, res)=>{
-    try {
-        const user = await userModel.find({id: req.params.id})
-        res.status(201).json(user)
-    } catch (error) {
         res.status(500).json(error.message)
     }
-};
-
-//delete user by id
-const deleteOne = async (req, res)=>{
-    try {
-        await userModel.deleteOne({id: req.params.id})
-        res.status(201).json('Product deleted')
-    } catch (error) {
-        res.status(500).json(error.message)
-    }
-};
-
-//update user
-const updateUser = async (req, res)=>{
-    try {
-       await userModel.updateOne({id: req.params.id}, {$set: {name: req.body.name, age: req.body.age}})
-       res.status(201).json('Product updated')
-    } catch (error) {
-        res.status(500).json(error.message)
-    }
-};
-
-
-module.exports = {
-    allUsers,
-    createUser,
-    findOne,
-    deleteOne,
-    updateUser,
 }
+module.exports = {homeController, loginController, registerController}

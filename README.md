@@ -344,4 +344,13 @@ Don't forget the `enctype="multipart/form-data"` in your form.
 ```
 
 ## L13
-<p>In the lesson we learn how to upload the into the database</p>
+<p>In the lesson we learn how to upload file the into the database</p>
+
+## Validator
+<p>In the lesson we will learn about express validator</p>
+
+```JavaScript
+// name, email, password, date of birth
+// api/registre -> frontend route
+// using postman
+```
