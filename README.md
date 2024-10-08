@@ -1,6 +1,7 @@
 ## Node.js and Express tutorial
 Node: https://medium.com/@noyon674/learn-node-js-with-noyon-and-take-yourself-to-the-next-level-32b8104338bb </br>
-Express: https://medium.com/@noyon674/learn-express-js-with-noyon-573614d03ebe
+Express: https://medium.com/@noyon674/learn-express-js-with-noyon-573614d03ebe </br>
+Authentication: https://medium.com/@noyon674/authentication-authorization-c58b7c1e9cfc
 
 ## File and content structure
 
@@ -379,6 +380,7 @@ Don't forget the `enctype="multipart/form-data"` in your form.
 - require to the mongoose shema file
 - use `new` keyword beform mongoose schema
 - create a key for encryption
+<<<<<<< HEAD
 
 ```JavaScript
 const encrypt = require('mongoose-encryption');
@@ -391,3 +393,5 @@ userSchema.plugin(encrypt, {
     encryptedFields: ['password'] 
 });
 ```
+=======
+>>>>>>> 6342673e94edfdb1e1df7ea44b843575630e0205
