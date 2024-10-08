@@ -3,7 +3,18 @@ const homeController = (req, res)=>{
 }
 
 const registerController = (req, res)=>{
-    res.status(201).json('Register page')
+    try {
+        const {name, email, password, dob} = req.body
+        const newUser = {
+            name,
+            email,
+            password,
+            dob
+        }
+        res.status(201).json(newUser)
+    } catch (error) {
+        res.status(500).json(error.message)
+    }
 }
 
 const loginController = (req, res)=>{

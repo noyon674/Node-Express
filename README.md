@@ -358,3 +358,6 @@ Don't forget the `enctype="multipart/form-data"` in your form.
 // api/registre -> frontend route
 // using postman
 ```
+
+## practice validation
+<p>In this tutorial practiced the express validation</p>
