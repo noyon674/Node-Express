@@ -379,3 +379,15 @@ Don't forget the `enctype="multipart/form-data"` in your form.
 - require to the mongoose shema file
 - use `new` keyword beform mongoose schema
 - create a key for encryption
+
+```JavaScript
+const encrypt = require('mongoose-encryption');
+
+// write this code where schema is created
+const encKey = process.env.ENC_KEY
+
+userSchema.plugin(encrypt, { 
+    secret: encKey,
+    encryptedFields: ['password'] 
+});
+```
