@@ -361,3 +361,21 @@ Don't forget the `enctype="multipart/form-data"` in your form.
 
 ## practice validation
 <p>In this tutorial practiced the express validation</p>
+
+
+---
+---
+
+## Authentication & Authorization
+
+### Auth01
+<p>In this tutorial we learn about low level security which is register and login with same emai, otherwise there is not access.</p>
+
+### Auth02
+<p>Database Encryption next level authentication of lower level</p>
+
+`Encrypte password` In this tutorial we will use mongoose encryption. </br>
+- install mongoose encryption package
+- require to the mongoose shema file
+- use `new` keyword beform mongoose schema
+- create a key for encryption
