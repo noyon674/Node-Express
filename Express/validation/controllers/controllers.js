@@ -10,4 +10,4 @@ const loginController = (req, res)=>{
     res.status(201).json('Login page')
 }
 
-module.exports = {homeController, registerController, loginController}
+module.exports = {homeController, registerController, loginController};
