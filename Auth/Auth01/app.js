@@ -37,8 +37,16 @@ app.post('/register', async (req, res)=>{
     }
 })
 
-app.post('/login', (req, res)=>{
-    res.status(201).json('login')
+app.post('/login', async(req, res)=>{
+    try {
+        const {email, password} = req.body
+        const user = await User.findOne({email: email})
+        if(user && user.password == password){
+            res.status(201).json('Login successful')
+        }else res.status(400).json('Creditional not match')
+    } catch (error) {
+        res.json(error.message)
+    }
 })
 
 app.use((req, res, next)=>{
