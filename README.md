@@ -393,5 +393,3 @@ userSchema.plugin(encrypt, {
     encryptedFields: ['password'] 
 });
 ```
-=======
->>>>>>> 6342673e94edfdb1e1df7ea44b843575630e0205
