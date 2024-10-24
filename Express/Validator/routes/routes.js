@@ -2,6 +2,7 @@ const {
     homeController, 
     loginController, 
     registerController } = require('../controllers/controllers')
+    
 const runValidator = require('../middleware/runValidator')
 const userRouter = require('express').Router()
 const { registerValidation, loginValidation } = require('../middleware/validation')
