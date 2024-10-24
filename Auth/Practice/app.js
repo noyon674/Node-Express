@@ -2,6 +2,9 @@ const express = require('express');
 const userRouter = require('./router/router');
 const app = express();
 
+app.use(express.json())
+app.use(express.urlencoded({extended: false}))
+
 app.use(userRouter)
 
 app.use((req, res, next)=>{

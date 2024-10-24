@@ -3,7 +3,7 @@ const homeController = (req, res)=>{
 }
 
 const registerController = (req, res)=>{
-    res.status(200).json('Registration page')
+    res.send('hi')
 }
 
 module.exports = {homeController, registerController}
