@@ -393,3 +393,25 @@ userSchema.plugin(encrypt, {
     encryptedFields: ['password'] 
 });
 ```
+### Auth03
+<p>In this tutorial we will learn about password hashing</p>
+
+```JavaScript
+//password encrypted when storing into the database
+const md5 = require('md5')
+app.post('/register', (req, res)=>{
+    const {email, password} = req.body
+    const newUser = new user({
+        email: email,
+        password: md5(password)
+    })
+})
+app.post('/login', (req, res)=>{
+    const {email, password} = req.body
+    const findUser = await user.findOne({email:email})
+
+    if( findUser && findUser.password == md5(password)){
+        res.status(200).json('Login successful')
+        }
+}
+```
