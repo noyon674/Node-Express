@@ -413,5 +413,34 @@ app.post('/login', (req, res)=>{
     if( findUser && findUser.password == md5(password)){
         res.status(200).json('Login successful')
         }
-}
+})
+```
+### Auth04
+<p>In this tutorial we will learn salting. In hashing was a problem. It give the same encrypted code for same password</p>
+- salting means we will add some extra value with hash value
+`install bcrypt`
+
+```JavaScript
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
+
+//register
+bcrypt.hash(req.body.password, saltRounds, async function(err, hash) {
+    const {email} = req.body
+    const newUser = new user({
+        email: email,
+        password: hash
+    })
+    await newUser.save()
+    res.status(200).json(newUser);
+});
+
+//login
+//req.body.password, user.password
+if( findUser){
+    bcrypt.compare(password, findUser.password, function(err, result) {
+        if(result)
+            res.status(200).json('Login successful')
+        });
+}else res.status(200).json('does not match')
 ```
